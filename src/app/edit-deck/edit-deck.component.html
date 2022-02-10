@@ -2,14 +2,10 @@
   <div class="mb-3">
     <input
       #title
-      [ngStyle]="{
-        'background-color':
-          !form.controls['name'].valid && 'rgba(255, 255, 255, 0.318)'
-      }"
       formControlName="name"
       class="form-control deck-title"
       type="text"
-      placeholder="Enter Deck Name..."
+      placeholder="Enter Deck Name... ex. Anatomy or Chemistry"
     />
     <label for="name" *ngIf="title.value" style="font-size: small"
       >Deck Name</label
@@ -25,7 +21,7 @@
     <label for="name" *ngIf="desc.value" style="font-size: small"
       >Description</label
     >
-  </div> 
+  </div>
   <ul
     class="list-group"
     style="height: 100%"

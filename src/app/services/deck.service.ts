@@ -20,11 +20,13 @@ export class DeckService {
     return this.decks.map((d) => ({ name: d.name, length: d.cards.length }));
   }
   addDeck(newDeck: Deck) {
-    this.decks.push(new Deck(newDeck.name, newDeck.cards));
+    this.decks.push(new Deck(newDeck.name, newDeck.cards, ''));
     this.saveDecks();
   }
   updateDeck(updatedDeck: Deck) {
-    const deckIndex = this.decks.findIndex((d) => d.name === updatedDeck.name);
+    const deckIndex = this.decks.findIndex((d) => d.id === updatedDeck.id);
+    console.log(updatedDeck);
+
     if (deckIndex > -1) {
       Object.assign(this.decks[deckIndex], updatedDeck);
       this.saveDecks();
@@ -46,7 +48,7 @@ export class DeckService {
     const cards = this.storageService.get('flashcards');
     if (cards) {
       this.decks = JSON.parse(cards).map(
-        (d: Deck) => new Deck(d.name, d.cards)
+        (d: Deck) => new Deck(d.name, d.cards, d.id)
       );
     } else {
       this.decks = [];

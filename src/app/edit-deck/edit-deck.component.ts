@@ -9,7 +9,7 @@ import { DeckService } from '../services/deck.service';
   selector: 'app-edit-deck',
   templateUrl: './edit-deck.component.html',
   styleUrls: ['./edit-deck.component.scss'],
-}) 
+})
 export class EditDeckComponent implements OnInit {
   card = new FormGroup({
     question: new FormControl(null, Validators.required),
@@ -17,7 +17,7 @@ export class EditDeckComponent implements OnInit {
   });
   form!: FormGroup;
   editMode: boolean = false;
-
+  editID: string | null = null
   constructor(
     private route: ActivatedRoute,
     private deckService: DeckService
@@ -32,6 +32,10 @@ export class EditDeckComponent implements OnInit {
     });
   }
   initForm(editDeck?: Deck) {
+    if(editDeck){
+      this.editID = editDeck.id;
+    }
+
     let name = '';
     let description = '';
     let cards = [this.card];
@@ -86,10 +90,10 @@ export class EditDeckComponent implements OnInit {
     };
     if (this.editMode) {
       // Update Deck
-      this.deckService.updateDeck(newDeck);
+      this.deckService.updateDeck({...newDeck, id: this.editID!});
     } else {
       // Add new
-      this.deckService.addDeck(newDeck);
+      this.deckService.addDeck({...newDeck, id: ''});
     }
     this.form.reset();
   }
