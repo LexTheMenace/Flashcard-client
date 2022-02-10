@@ -1,4 +1,5 @@
 <h3>Your Flashcard Decks </h3>
+<p *ngIf="!decks.length">Looks like you don't have any flashcards yet... <a routerLink="/manage/new" style="color: rgb(95, 4, 200);">Click here to get started!</a></p>
 <app-deck-list-item
 [name]="deck.name"
 [length]="deck.length"
