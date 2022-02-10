@@ -1,0 +1,17 @@
+<div class="header d-flex justify-content-between">
+  {{ cardNumber + 1 }}
+  <div class="options d-flex">
+    <span (click)="addCard()" class="add">&plus;</span>
+    <span (click)="removeCard()" class="delete">&times;</span>
+  </div>
+</div>
+<div class="row" [formGroup]="card">
+  <div class="mt-3 col-6">
+    <input formControlName="question" type="text" class="form-control" />
+    <label for="" class="form-label">{{ "Question" | uppercase }}</label>
+  </div>
+  <div class="mt-3 col-6">
+    <input type="text" class="form-control" formControlName="answer" />
+    <label for="" class="form-label">{{ "Answer" | uppercase }}</label>
+  </div>
+</div>

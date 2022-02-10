@@ -1,0 +1,10 @@
+<h3 class="text-center">{{ deck.cards[questionNumber].subject}}</h3>
+<app-card
+  [question]="deck.cards[questionNumber].question"
+  [answer]="deck.cards[questionNumber].answer"
+></app-card>
+<div class="btn-container">
+  <button (click)="prevQuestion()">Prev</button>
+  <button (click)="nextQuestion()">Next</button>
+</div>
+

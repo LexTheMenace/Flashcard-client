@@ -1,0 +1,17 @@
+.card {
+  width: 94vw;
+  height: 60vw;
+  max-width: 750px;
+  max-height: 500px;
+  border-radius: 15px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    text-align: center;
+    font-size: 2em;
+    max-width: 95%;
+  }
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.356);
+}

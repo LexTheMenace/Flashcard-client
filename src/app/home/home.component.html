@@ -1,0 +1,11 @@
+<h3>Your Flashcard Decks </h3>
+<app-deck-list-item
+[name]="deck.name"
+[length]="deck.length"
+[menuButton]="true"
+[menuOpen]="menuOpen === i"
+*ngFor="let deck of decks; let i = index;"
+(toggleMenu)="menuOpen === i ? menuOpen = null : menuOpen = i"
+>
+</app-deck-list-item>
+

@@ -1,0 +1,55 @@
+<form class="mt-2" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <input
+      #title
+      [ngStyle]="{
+        'background-color':
+          !form.controls['name'].valid && 'rgba(255, 255, 255, 0.318)'
+      }"
+      formControlName="name"
+      class="form-control deck-title"
+      type="text"
+      placeholder="Enter Deck Name..."
+    />
+    <label for="name" *ngIf="title.value" style="font-size: small"
+      >Deck Name</label
+    >
+  </div>
+  <div class="mb-3">
+    <input
+      #desc
+      formControlName="description"
+      placeholder="Enter a description..."
+      class="form-control description"
+    />
+    <label for="name" *ngIf="desc.value" style="font-size: small"
+      >Description</label
+    >
+  </div> 
+  <ul
+    class="list-group"
+    style="height: 100%"
+    formArrayName="cards"
+  >
+    <app-deck-edit-item
+      *ngFor="let card of cards.controls; let i = index"
+      [card]="card"
+      [formGroupName]="i"
+      [cardNumber]="i"
+      class="list-group-item mb-3"
+      (add)="addCard()"
+      (remove)="removeCard(i)"
+    >
+    </app-deck-edit-item>
+  </ul>
+  <div class="d-flex mb-1">
+    <button
+      [title]="form.invalid ? 'Cannot Submit with Invalid Entries' : ''"
+      class="mx-auto"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      {{ editMode ? "Save" : "Submit" }}
+    </button>
+  </div>
+</form>

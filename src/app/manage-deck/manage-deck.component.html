@@ -1,0 +1,15 @@
+<h3 class="text-center">
+  Manage Your Flashcards
+  <a routerLink="add" class="p-1 add-btn"
+    >&plus;</a
+  >
+</h3>
+<app-deck-list-item
+  [name]="deck.name"
+  [length]="deck.length"
+  [delButton]="true"
+  [routerLink]="deck.name"
+  *ngFor="let deck of decks"
+  (delete)="deleteDeck(deck.name)"
+>
+</app-deck-list-item>

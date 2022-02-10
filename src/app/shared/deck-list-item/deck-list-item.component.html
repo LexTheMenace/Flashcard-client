@@ -1,0 +1,16 @@
+<h4 class="text-center">{{ name }}</h4>
+<small style="display: block" class="w-100 text-center"
+  >{{ length }} cards</small
+>
+ <!-- Delete Deck Button  -->
+<span *ngIf="delButton" (click)="deleteDeck($event)">&times;</span>
+<!-- Menu Button  -->
+<div *ngIf="menuButton" class="menu-btn" (click)="toggleMenu.emit()">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div *ngIf="menuOpen" class="menu" >
+    <a class="option" [routerLink]="'/study/' + name">Study</a>
+    <a class="option" [routerLink]="'/manage/' + name">Edit</a>
+  </div>
+</div>

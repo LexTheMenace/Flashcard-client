@@ -1,0 +1,4 @@
+<div  (click)="flipCard()" class="card">
+  <p *ngIf="!showAnswer" class="front">Q: {{question}}</p>
+  <p *ngIf="showAnswer" class="back">A: {{answer}}</p>
+</div>

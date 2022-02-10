@@ -1,0 +1,50 @@
+[
+  {
+      "question": "What is space complexity?",
+      "answer": "Amount of memory/space an algorithm needs to run.",
+      "answerOptions": [],
+      "subject": "Algorithms"
+  },
+  {
+      "question": "What is time complexity?",
+      "answer": "How long an algorithm need based on number of inputs.",
+      "answerOptions": [],
+      "subject": "Algorithms"
+  },
+  {
+      "question": "What is a deterministic algorithm?",
+      "answer": "executes each step w/ exact decisions",
+      "answerOptions": [],
+      "subject": "Algorithms"
+  },
+  {
+      "question": "What do search algorithms do?",
+      "answer": " find specific data in a structure (file in a file system)",
+      "answerOptions": [],
+      "subject": "Algorithms"
+  },
+  {
+      "question": "What do sorting algorithms do?",
+      "answer": "sort data",
+      "answerOptions": [],
+      "subject": "Algorithms"
+  },
+  {
+      "question": "What do computational algorithms do?",
+      "answer": "given one set of data, calculate another",
+      "answerOptions": [],
+      "subject": "Algorithms"
+  },
+  {
+      "question": "What does a terminal shell do?",
+      "answer": "Translates our text into cpu commands.",
+      "answerOptions": [],
+      "subject": "Terminal"
+  },
+  {
+      "question": "What is the standard command syntax?",
+      "answer": "> Command Options arguments",
+      "answerOptions": [],
+      "subject": "Terminal"
+  }
+]

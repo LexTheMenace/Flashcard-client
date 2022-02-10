@@ -1,0 +1,16 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+a{
+  position: absolute;
+  line-height: 1;
+  right: 14vw;
+  color: rgb(0, 0, 0);
+  &:hover{
+    color: rgb(0, 125, 0);
+  }
+}
